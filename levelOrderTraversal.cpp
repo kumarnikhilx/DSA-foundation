@@ -57,11 +57,46 @@ void leveOrderTraversal(Node* root){
         }
     }
 }
+void levelOrderPrint(Node* root){
+    queue<Node*> q;
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty()){
+        Node* front=q.front();
+        q.pop();
+
+        if(front ==NULL){
+            cout<<endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }
+        else{
+                cout<<front->data<<" ";
+
+            if(front->left !=NULL){
+                q.push(front->left);
+            }
+            if(front->right !=NULL){
+                q.push(front->right);
+
+            }
+        }
+        
+    }
+}
 
 
 int main(){
 
     Node* root=createTree();
+
+    cout<<"level Order Traversal"<<endl;
     leveOrderTraversal(root);
+    cout<<endl;
+
+    cout<<"level Order Printing:"<<endl;
+    levelOrderPrint(root);
     return 0;
 }

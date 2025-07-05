@@ -45,3 +45,6 @@ int main(){
     Node* root=createTree();
     return 0;
 }
+
+// example input
+// 10 20 50 65 -1 -1 90 -1 -1 70 -1 -1 30 60 -1 -1 100 -1 -1 30
